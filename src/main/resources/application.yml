@@ -1,0 +1,15 @@
+spring:
+  liquibase:
+    enabled: false
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://localhost:5432/jasperMVP
+    username: daniel
+    password: daniel
+server:
+  port: 8081
+
+# swagger-ui custom path
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
