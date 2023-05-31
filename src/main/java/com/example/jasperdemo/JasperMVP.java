@@ -9,7 +9,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class JasperMVP {
     public static void main(String[] args) {
         SpringApplicationBuilder builder = new SpringApplicationBuilder(JasperMVP.class);
-
         builder.headless(false);
 
         ConfigurableApplicationContext context = builder.run(args);
