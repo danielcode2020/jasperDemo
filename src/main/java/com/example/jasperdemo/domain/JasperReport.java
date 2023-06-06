@@ -1,5 +1,6 @@
 package com.example.jasperdemo.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import org.hibernate.annotations.Type;
@@ -30,6 +31,13 @@ public class JasperReport implements Serializable {
 
     @Column(name = "data_content_type")
     private String dataContentType;
+
+    @Column(name = "reportUnitUri")
+    private String reportUnitUri;
+
+    @ManyToOne
+    @JsonIgnoreProperties(value = { "jasperReports" }, allowSetters = true)
+    private DataSource dataSource;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -85,6 +93,27 @@ public class JasperReport implements Serializable {
         this.dataContentType = dataContentType;
     }
 
+    public String getReportUnitUri() {
+        return reportUnitUri;
+    }
+
+    public void setReportUnitUri(String reportUnitUri) {
+        this.reportUnitUri = reportUnitUri;
+    }
+
+    public DataSource getDataSource() {
+        return this.dataSource;
+    }
+
+    public void setDataSource(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
+
+    public JasperReport dataSource(DataSource dataSource) {
+        this.setDataSource(dataSource);
+        return this;
+    }
+
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -110,8 +139,8 @@ public class JasperReport implements Serializable {
         return "JasperReport{" +
             "id=" + getId() +
             ", name='" + getName() + "'" +
-            ", data='" + getData() + "'" +
             ", dataContentType='" + getDataContentType() + "'" +
+            ", dataContentType='" + getReportUnitUri() + "'" +
             "}";
     }
 }

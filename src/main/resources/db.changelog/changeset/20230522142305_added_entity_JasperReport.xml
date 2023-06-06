@@ -18,13 +18,57 @@
                 <constraints nullable="false" />
             </column>
             <column name="data" type="${blobType}">
-                <constraints nullable="true" />
+                <constraints nullable="false" />
             </column>
             <column name="data_content_type" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="report_unit_uri" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="data_source_id" type="bigint">
                 <constraints nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>
+    </changeSet>
+
+    <changeSet id="20230606103635-1" author="jhipster">
+        <createTable tableName="data_source">
+            <column name="id" type="bigserial">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="label" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="driver_class" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="password" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="username" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="connection_url" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="uri" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20230522142305-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="data_source_id"
+                                 baseTableName="jasper_report"
+                                 constraintName="fk_jasper_report__data_source_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="data_source"/>
     </changeSet>
 
 </databaseChangeLog>

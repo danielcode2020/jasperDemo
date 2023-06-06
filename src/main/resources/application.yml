@@ -1,9 +1,10 @@
 spring:
   liquibase:
-    enabled: false
+    enabled: true
+    change-log: classpath:db.changelog/db.changelog-master.xml
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/jasperMVP
+    url: jdbc:postgresql://localhost:5432/jasper_demo
     username: daniel
     password: daniel
 server:
@@ -13,3 +14,8 @@ server:
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
+
+jasperdemo:
+  jasperServerUrl: http://localhost:8081/jasperserver/rest_v2
+  username: jasperadmin
+  password: jasperadmin
