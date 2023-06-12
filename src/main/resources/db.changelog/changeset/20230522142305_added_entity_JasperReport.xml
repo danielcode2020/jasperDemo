@@ -14,17 +14,17 @@
             <column name="id" type="bigserial">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="name" type="varchar(255)">
+            <column name="name" type="text">
                 <constraints nullable="false" />
             </column>
             <column name="data" type="${blobType}">
                 <constraints nullable="false" />
             </column>
-            <column name="data_content_type" type="varchar(255)">
+            <column name="data_content_type" type="text">
                 <constraints nullable="false" />
             </column>
 
-            <column name="report_unit_uri" type="varchar(255)">
+            <column name="report_unit_uri" type="text">
                 <constraints nullable="false" />
             </column>
 
