@@ -1,3 +1,8 @@
 package com.example.jasperdemo.service;
 
-public record ReportDto (String label, String type, String data, Long dataSourceId) {}
+import jakarta.validation.constraints.NotNull;
+
+public record ReportDto (@NotNull String label,
+                         @NotNull String type,
+                         @NotNull String data,
+                         @NotNull Long dataSourceId) {}
