@@ -1,9 +1,9 @@
 package com.example.jasperdemo.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import org.hibernate.annotations.Type;
 
 import java.io.Serializable;
 
@@ -26,6 +26,7 @@ public class JasperReport implements Serializable {
     @Column(name = "name", nullable = false)
     private String name;
 
+    @JsonIgnore
     @Column(name = "data")
     private byte[] data;
 

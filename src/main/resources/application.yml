@@ -8,7 +8,7 @@ spring:
     username: daniel
     password: daniel
 server:
-  port: 8081
+  port: 8080
 
 # swagger-ui custom path
 springdoc:
