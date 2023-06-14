@@ -1,32 +1,14 @@
 package com.example.jasperdemo.controller;
 
 
-import com.example.jasperdemo.domain.JasperReport;
-import com.example.jasperdemo.repository.JasperReportRepository;
-import com.example.jasperdemo.service.ReceivedFileDto;
-import net.sf.jasperreports.engine.*;
-import net.sf.jasperreports.view.JasperViewer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.ResponseEntity;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.web.bind.annotation.*;
-
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Objects;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
 @RequestMapping("/api")
 public class JasperReportResource {
+    /*
 //
 //    private final static Logger log = LoggerFactory.getLogger(JasperReportResource.class);
 //
@@ -111,4 +93,6 @@ public class JasperReportResource {
 //        }
 //
 //    }
+
+     */
 }

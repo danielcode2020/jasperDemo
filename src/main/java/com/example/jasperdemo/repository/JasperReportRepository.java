@@ -3,6 +3,7 @@ package com.example.jasperdemo.repository;
 
 import com.example.jasperdemo.domain.JasperReport;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -10,4 +11,7 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface JasperReportRepository extends JpaRepository<JasperReport, Long> {}
+public interface JasperReportRepository extends JpaRepository<JasperReport, Long> {
+    @Modifying
+    void deleteAllByNameContaining(String name);
+}
